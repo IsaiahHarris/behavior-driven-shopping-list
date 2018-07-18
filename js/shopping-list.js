@@ -4,12 +4,20 @@ class ShoppingList{
   }
 
   addItem (item) {
-    this.items.push(item);
+    if (!(item instanceof ShoppingListItem)){
+      throw 'Invalid'
+    } else {
+      this.items.push(item);
+    }
   }
 
   removeItem (item) {
-    let indexOfItem = this.items.indexOf(item);
-    this.items.splice(indexOfItem, 1);
+    if (!(item instanceof ShoppingListItem)){
+      throw 'Invalid'
+    } else {
+      let indexOfItem = this.items.indexOf(item);
+      this.items.splice(indexOfItem, 1);
+    }
   }
 }
 

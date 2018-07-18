@@ -61,13 +61,17 @@ describe('ShoppingListItem', function () {
 describe('ShoppingList', function() {
   let newList;
   let testItem;
+  let dumbItem;
+
   before(function () {
     newList = new ShoppingList();
     testItem = new ShoppingListItem('drugs', 'isDank');
+    dumbItem = {};
   })
+
   it('should be a class', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
-  });
+  }); 
 
   it('should have a property named "items" that is an empty array', function () {
     expect(newList).to.have.property('items');
@@ -80,6 +84,7 @@ describe('ShoppingList', function() {
     expect(newList.addItem).to.be.a('function');
     newList.addItem(testItem);
     expect(newList.items).to.include(testItem);
+    expect(() => newList.addItem()).to.throw('Invalid');
   })
 
   it('should have method removeItem', function(){
@@ -87,14 +92,14 @@ describe('ShoppingList', function() {
     expect(newList.removeItem).to.be.a('function');
     newList.removeItem(testItem);
     expect(newList.items).to.not.include(testItem);
+    expect(() => newList.removeItem()).to.throw('Invalid');
   })
 
   it('should have method render', function() {
     expect(newList).to.have.property('render');
     expect(newList.render).to.be.a('function');
+    expect(newList.render()).to.be.a('string');
   })
-
-
 })
 
 
