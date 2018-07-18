@@ -67,7 +67,7 @@ describe('ShoppingList', function() {
 
   it('should have a property named "items" that is an empty array', function () {
     expect(newList).to.have.property('items');
-    expect(newList.item).to.be.an('array');
+    expect(newList.items).to.be.an('array');
     expect(newList.items.length).to.equal(0);
   })
 })
