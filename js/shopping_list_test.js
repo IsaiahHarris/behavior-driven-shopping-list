@@ -10,42 +10,64 @@ describe('ShoppingListItem', function () {
   })
 
   it('should be a class', function () {
-      expect(newItem).to.be.instanceOf(ShoppingListItem);
+    expect(newItem).to.be.instanceOf(ShoppingListItem);
   });
 
   it('should have property "name"', function () {
-    expect(newItem).to.haveOwnProperty('name');
+    expect(newItem).to.have.property('name');
     expect(newItem.name).to.be.a('string');
   })
 
   it('should have property "description"', function () {
-    expect(newItem).to.haveOwnProperty('description');
+    expect(newItem).to.have.property('description');
     expect(newItem.description).to.be.a('string');
   })
 
   it('should have property "is_done"', function () {
-    expect(newItem).to.haveOwnProperty('is_done');
-  })
-
-  it('should be a boolean value', function () {
+    expect(newItem).to.have.property('is_done');
     expect(newItem.is_done).to.be.a('boolean');
   })
 
-  it('should have check method', function () {
-    expect(newItem).to.haveOwnProperty('check');
-    expect(newItem.check).to.be.a('function');
-    expect(newItem.is_done).to.eq(true);
-  })
+  describe('Methods', function () {
+    describe('check', function () {
+      it('should have check method', function () {
+        expect(newItem).to.have.property('check');
+        newItem.check();
+        expect(newItem.is_done).to.equal(true);
+      })
+    })
 
-  it('should have render method', function () {
-    expect(newItem).to.haveOwnProperty('render');
-    expect(newItem.render).to.be.a('function');
-  })
+    describe('uncheck', function () {
+      it('should have uncheck method', function () {
+        expect(newItem).to.have.property('uncheck');
+        newItem.uncheck();
+        expect(newItem.is_done).to.deep.equal(false);
+      })
+    })
 
-  it('should have uncheck method', function () {
-    expect(newItem).to.haveOwnProperty('uncheck');
-    expect(newItem.uncheck).to.be.a('function');
-    expect(newItem.is_done).to.equal(false);
+    describe('render', function () {
+      it('should have render method', function () {
+        expect(newItem).to.have.property('render');
+        newItem.render();
+        expect(newItem.render()).to.be.a('string');
+      })
+    })
+  })
+});
+
+describe('ShoppingList', function() {
+  let newList;
+
+  before(function () {
+    newList = new ShoppingList();
+  })
+  it('should be a class', function () {
+    expect(newList).to.be.instanceOf(ShoppingList);
+  });
+
+  it('should have a property named "items" that is an empty array', function () {
+    expect(newList).to.have.property('items');
+    expect(newList.item).to.be.an('array');
+    expect(newList.items.length).to.equal(0);
   })
 })
-
