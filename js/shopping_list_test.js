@@ -30,4 +30,22 @@ describe('ShoppingListItem', function () {
   it('should be a boolean value', function () {
     expect(newItem.is_done).to.be.a('boolean');
   })
+
+  it('should have check method', function(){
+    expect(newItem).to.haveOwnProperty('check');
+    expect(newItem.check).to.be.a('function');
+    expect(newItem.is_done).to.equal(true);
+  })
+
+  it('should have render method', function(){
+    expect(newItem).to.haveOwnProperty('render');
+    expect(newItem.render).to.be.a('function');
+  })
+
+  it('should have uncheck method', function(){
+    expect(newItem).to.haveOwnProperty('uncheck');
+    expect(newItem.uncheck).to.be.a('function');
+    expect(newItem.is_done).to.equal(false);
+  })
 })
+
