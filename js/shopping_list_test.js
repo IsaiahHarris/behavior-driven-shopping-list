@@ -10,7 +10,7 @@ describe('ShoppingListItem', function () {
   })
 
   it('should be a class', function () {
-    expect(newItem).to.be.instanceOf(ShoppingListItem);
+      expect(newItem).to.be.instanceOf(ShoppingListItem);
   });
 
   it('should have property "name"', function () {
@@ -31,18 +31,18 @@ describe('ShoppingListItem', function () {
     expect(newItem.is_done).to.be.a('boolean');
   })
 
-  it('should have check method', function(){
+  it('should have check method', function () {
     expect(newItem).to.haveOwnProperty('check');
     expect(newItem.check).to.be.a('function');
-    expect(newItem.is_done).to.equal(true);
+    expect(newItem.is_done).to.eq(true);
   })
 
-  it('should have render method', function(){
+  it('should have render method', function () {
     expect(newItem).to.haveOwnProperty('render');
     expect(newItem.render).to.be.a('function');
   })
 
-  it('should have uncheck method', function(){
+  it('should have uncheck method', function () {
     expect(newItem).to.haveOwnProperty('uncheck');
     expect(newItem.uncheck).to.be.a('function');
     expect(newItem.is_done).to.equal(false);
