@@ -57,9 +57,10 @@ describe('ShoppingListItem', function () {
 
 describe('ShoppingList', function() {
   let newList;
-
+  let testItem;
   before(function () {
     newList = new ShoppingList();
+    testItem = new ShoppingListItem('drugs', 'isDank');
   })
   it('should be a class', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
@@ -70,4 +71,25 @@ describe('ShoppingList', function() {
     expect(newList.items).to.be.an('array');
     expect(newList.items.length).to.equal(0);
   })
+
+  it('should have method addItem', function(){
+    expect(newList).to.have.property('addItem');
+    expect(newList.addItem).to.be.a('function');
+    expect(newList).to.respondTo('addItem')
+    expect(newList.addItem.length).to.be.equal(newList.addItem.length+1);
+
+  })
+
+  it('should have method removeItem', function(){
+    expect(newList).to.have.property('removeItem');
+    expect(newList.removeItem).to.be.a('function');
+    expect(newList).to.respondTo('removeItem');
+    newList.removeItem(testItem);
+    expect(newList.items).to.not.include(testItem);
+    expect(newList.removeItem.length).to.be.equal(newList.removeItem.length-1);
+  })
+
+
 })
+
+
