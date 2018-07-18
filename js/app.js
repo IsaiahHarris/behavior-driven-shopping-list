@@ -24,4 +24,9 @@
     }
   }
 
+  w.removeItemButtonClicked = function (i) {
+    let item = myList.items[i];
+    myList.removeItem(item);
+  }
+
 })(window);

@@ -15,7 +15,7 @@ class ShoppingListItem {
   }
 
   render(i) {
-    return ` <li class = "completed_${this.is_done}"> <input type="checkbox" onchange = "changeCheckedStatus(event, ${i})" id = 'check' /> <span>${this.name} </span><span>${this.description}</span></li>`
+    return ` <li class = "completed_${this.is_done}"> <input type="checkbox" onchange = "changeCheckedStatus(event, ${i})" id='check' /> <span>${this.name} </span><span>${this.description}</span><button id='remove' onclick="removeItemButtonClicked(${i})">X</button></li>`
   } 
 }
 
