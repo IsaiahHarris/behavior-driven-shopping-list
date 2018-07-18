@@ -20,8 +20,11 @@ class ShoppingList{
     }
   }
   render(){
-    let concatArr = this.items.map(element => element.render()).join('');
-    return `<ul>${concatArr}</ul>`
+    let wholeList = '';
+    for (let i = 0; i < this.items.length; i++){
+      wholeList += this.items[i].render(i);
+    };
+    return `<ul>${wholeList}</ul>`
   }
 }
 
