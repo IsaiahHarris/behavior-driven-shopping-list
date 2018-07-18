@@ -19,5 +19,9 @@ class ShoppingList{
       this.items.splice(indexOfItem, 1);
     }
   }
+  render(){
+    let concatArr = this.items.map(element => element.render()).join('');
+    return `<ul>${concatArr}</ul>`
+  }
 }
 

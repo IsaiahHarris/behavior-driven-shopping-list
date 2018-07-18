@@ -96,9 +96,12 @@ describe('ShoppingList', function() {
   })
 
   it('should have method render', function() {
+    newList.addItem(testItem);
+    newList.addItem(testItem);
     expect(newList).to.have.property('render');
     expect(newList.render).to.be.a('function');
     expect(newList.render()).to.be.a('string');
+
   })
 })
 
