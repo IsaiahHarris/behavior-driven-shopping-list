@@ -15,4 +15,16 @@
     let renderList = myList.render();
     contentDiv.innerHTML = renderList + 'test';
   }
+  // let checkBox = document.getElementById('check');
+  w.onchange = changeCheckedStatus;
+  function changeCheckedStatus(idx, checkbox){
+    console.log(myList[idx])
+    console.log(checkbox);
+    if (checkbox.checked === true){
+      new_shopping_list_item.check();
+    } else {
+      new_shopping_list_item.uncheck();
+    }
+  }
+
 })(window);
