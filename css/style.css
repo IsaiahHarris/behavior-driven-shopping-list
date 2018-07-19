@@ -4,7 +4,8 @@ html, body{
 }
 
 body{
-  background-color:#feffbe;
+  background-color: #D9DCD6;
+  /* background: linear-gradient(#D9DCD6, lightslategray); */
   font-family: Comic Sans MS, sans-serif;
 }
 
@@ -13,9 +14,12 @@ body{
   align-items:center;
   width:100%;
   text-align:center;
+  border-bottom: 1px solid;
 }
+
 .header{
-  background-color:#333232;
+  background: linear-gradient(#3981CE, #16425B);
+  /* background-color:#3981CE; */
   height: 50px;
   color:whitesmoke;
   width:100%;
@@ -33,50 +37,64 @@ body{
 }
 
 #name, #description{
-  width:75%;
+  width: 60%;
   margin:5px;
   height: 20px;
   border: 0.5px solid #7C5E2A;
+  border-radius: 5px;
   background-color:#f7fffe;
 }
-#description{
-  height: 30px;
+
+#name:hover, #description:hover{
+  border: 1px #2F6690 solid;
 }
+#description{
+  height: 40px;
+}
+
 #add{
   background-color:#d7f6ff ;
   margin-top:5px;
-  padding:8px;
+  padding:10px 50px;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+
+#add:active {
+  background-color: aliceblue;
 }
 
 
 .list-choices-container{
   height: 35px;
   width:100%;
-  background-color: #7C5E2A;
+  /* background-color: #81C3D7; */
+  background: linear-gradient(#D9DCD6, lightslategray);
   color:whitesmoke;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
- .to-do-list, .shopping-list{
+.to-do-list, .shopping-list{
   height:35px;
   width:50%;
   text-align:center;
   line-height: 32px;
- } 
- .to-do-list:hover, .shopping-list:hover{
+  border-bottom: 1px solid black;
+ }
+
+.to-do-list:hover, .shopping-list:hover{
   height:35px;
   width:50%;
   text-align:center;
   line-height: 32px;
-  color:goldenrod;
+  color:black;
  } 
- .shopping-list{
-  border-right: whitesmoke 1px solid;
+
+.shopping-list{
+  border-right: black 1px solid;
 } 
-
-
 
 #content{
   display: flex;
@@ -87,18 +105,38 @@ li{
   list-style-type:none;
   width:87%;
   background-color:#feffbe;
-  /* margin-bottom: 6px; */
-  padding-bottom: 6px;
-  border-bottom: 0.5px dotted black;
+  margin-bottom: 6px;
+  border-bottom: 0.5px solid black;
+  border-right: 0.5px solid black;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+li:hover{
+  border: 1px #2F6690 solid;
 }
 
 li.completed_true > span{
   text-decoration: line-through;
 }
 
+p {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+ul {
+  padding-left: 20%;
+  padding-right: 11%;
+}
 
 #remove{
-  margin-left:162px;
+  margin-left: 70%;
+  font-size: 10px;
+}
+
+#remove:active{
+  color: red;
 }
 
 @media (min-width:376px){
@@ -106,9 +144,7 @@ li.completed_true > span{
   #remove{
     margin-left:85%;
   }
-  #add{
-    padding:16px;
-  }
+
   #add:hover{
     background-color:aliceblue;
   }

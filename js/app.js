@@ -9,11 +9,9 @@
   let contentDiv = document.getElementById('content');
   
   function add_to_shopping_list(){
-    
     let itemName = document.getElementById('name').value;
     let itemNote = document.getElementById('description').value;
     let new_shopping_list_item = new ShoppingListItem(itemName, itemNote);
-    // new_shopping_list_item.render();
     myList.addItem(new_shopping_list_item);
     console.log(itemNote);
     let renderList = myList.render();
@@ -29,7 +27,7 @@
       item.uncheck();
       console.log('uncheck');
     }
-    // contentDiv.innerHTML = myList.render();
+    contentDiv.innerHTML = myList.render();
     console.log(event)
   }
 
