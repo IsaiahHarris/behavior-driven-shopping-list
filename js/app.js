@@ -13,7 +13,6 @@
     let itemNote = document.getElementById('description').value;
     let new_shopping_list_item = new ShoppingListItem(itemName, itemNote);
     myList.addItem(new_shopping_list_item);
-    console.log(itemNote);
     let renderList = myList.render();
     contentDiv.innerHTML = renderList;
 
@@ -22,10 +21,8 @@
     let item = myList.items[i];
     if(event.target.checked ===true){
       item.check();
-      console.log('check')
     } else {
       item.uncheck();
-      console.log('uncheck');
     }
     contentDiv.innerHTML = myList.render();
     console.log(event)
@@ -59,7 +56,5 @@
     console.log('this is todocontent');
     contentDiv.innerHTML = savedShoppingContent;
   }
-
-
   
 })(window);
