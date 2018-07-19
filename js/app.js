@@ -1,7 +1,7 @@
 (function (w) {
 
-  let savedToDoContent;
-  let savedShoppingContent;
+  let savedToDoContent = null;
+  let savedShoppingContent = null;
 
   w.add.onclick = add_to_shopping_list;
   
@@ -17,7 +17,6 @@
     let renderList = myList.render();
     contentDiv.innerHTML = renderList;
   }
-  // let checkBox = document.getElementById('check');
   w.changeCheckedStatus = function (event, i) {
     let item = myList.items[i];
     if(event.target.checked === true){
@@ -25,6 +24,7 @@
     } else {
       item.uncheck();
     }
+    contentDiv.innerHTML = myList.render();
   }
 
   w.removeItemButtonClicked = function (i) {
@@ -34,15 +34,28 @@
   }
 
 
-  let miscButton = document.getElementById('misc-id');
   let toDoButton = document.getElementById('to-do-list-id');
   let shoppingButton = document.getElementById('shopping-list-id');
-  let content = document.getElementById('content');
+  
   toDoButton.addEventListener('click', toDoPageFunc);
-  function toDoPageFunc(){
-    savedToDoContent = content.innerHTML;
-    console.log(savedToDoContent);
-    content.innerHTML = '';
+  shoppingButton.addEventListener('click', shoppingPageFunc);
+  
+  function toDoPageFunc(){  
+    savedShoppingContent = contentDiv.innerHTML;
+
+    console.log(savedShoppingContent);
+    console.log('this is shopping contentDiv');
+    contentDiv.innerHTML = savedToDoContent;
+    
   }
+  function shoppingPageFunc(){
+    savedToDoContent = contentDiv.innerHTML;
+  
+    console.log(savedToDoContent);
+    console.log('this is todocontent');
+    contentDiv.innerHTML = savedShoppingContent;
+  }
+
+
   
 })(window);

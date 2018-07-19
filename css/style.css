@@ -30,7 +30,6 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 #name, #description{
@@ -49,6 +48,7 @@ body{
   padding:8px;
 }
 
+
 .list-choices-container{
   height: 35px;
   width:100%;
@@ -59,22 +59,24 @@ body{
   align-items: center;
 }
 
- .to-do-list, .shopping-list, .misc{
+ .to-do-list, .shopping-list{
   height:35px;
-  width:33%;
+  width:50%;
   text-align:center;
   line-height: 32px;
  } 
-.to-do-list, .shopping-list{
+ .to-do-list:hover, .shopping-list:hover{
+  height:35px;
+  width:50%;
+  text-align:center;
+  line-height: 32px;
+  color:goldenrod;
+ } 
+ .shopping-list{
   border-right: whitesmoke 1px solid;
 } 
 
-/* #red-line{
-  height: 100%;
-  width:50px;
-  border-right:0.5px solid red;
-  background-color: red;
-} */
+
 
 #content{
   display: flex;
@@ -82,10 +84,34 @@ body{
 }
 
 li{
-  background-color: red;
   list-style-type:none;
   width:87%;
-  background-color:#f7fffe;
+  background-color:#feffbe;
+  /* margin-bottom: 6px; */
+  padding-bottom: 6px;
+  border-bottom: 0.5px dotted black;
 }
 
+li.completed_true > span{
+  text-decoration: line-through;
+}
+
+
+
+#remove{
+  margin-left:162px;
+}
+
+@media (min-width:376px){
+
+  #remove{
+    margin-left:85%;
+  }
+  #add{
+    padding:16px;
+  }
+  #add:hover{
+    background-color:aliceblue;
+  }
+}
 
