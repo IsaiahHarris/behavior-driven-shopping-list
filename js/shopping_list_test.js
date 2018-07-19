@@ -33,7 +33,7 @@ describe('ShoppingListItem', function () {
     describe('check', function () {
       it('should have check method', function () {
         expect(newItem).to.have.property('check');
-        newItem.check();
+        newItem.check();                                //expect(newItem).to.respondTo('check');
         expect(newItem.is_done).to.equal(true);
       })
     })
@@ -42,7 +42,7 @@ describe('ShoppingListItem', function () {
       it('should have uncheck method', function () {
         expect(newItem).to.have.property('uncheck');
         newItem.uncheck();
-        expect(newItem.is_done).to.deep.equal(false);
+        expect(newItem.is_done).to.equal(false);
       })
     })
 
@@ -62,12 +62,10 @@ describe('ShoppingListItem', function () {
 describe('ShoppingList', function () {
   let newList;
   let testItem;
-  let dumbItem;
 
   before(function () {
     newList = new ShoppingList();
     testItem = new ShoppingListItem('drugs', 'isDank');
-    dumbItem = {};
   })
 
   it('should be a class', function () {
