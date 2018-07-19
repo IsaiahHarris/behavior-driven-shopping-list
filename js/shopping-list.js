@@ -19,7 +19,7 @@ class ShoppingList{
       this.items.splice(indexOfItem, 1);
     }
   }
-  render(i){
+  render(){
     let wholeList = '';
     for (let i = 0; i < this.items.length; i++){
       wholeList += this.items[i].render(i);
