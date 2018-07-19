@@ -1,7 +1,5 @@
 const expect = chai.expect;
 const should = chai.should();
-const unwantedChar = ['{', '}', '[', ']', '!', '@', '#', '$', "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "/", "|", "<", ">", ".", ",", ";", ":", "'", "`", "~"]
-
 
 describe('ShoppingListItem', function () {
 
@@ -18,7 +16,6 @@ describe('ShoppingListItem', function () {
   it('should have property "name"', function () {
     expect(newItem).to.have.property('name');
     expect(newItem.name).to.be.a('string');
-    expect(newItem.name.split('')).to.not.include(unwantedChar);
     expect(newItem.name.length).to.be(newItem.name.length >= 1);
   })
 
@@ -62,7 +59,7 @@ describe('ShoppingListItem', function () {
 
 
 
-describe('ShoppingList', function() {
+describe('ShoppingList', function () {
   let newList;
   let testItem;
   let dumbItem;
@@ -75,7 +72,7 @@ describe('ShoppingList', function() {
 
   it('should be a class', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
-  }); 
+  });
 
   it('should have a property named "items" that is an empty array', function () {
     expect(newList).to.have.property('items');
@@ -83,7 +80,7 @@ describe('ShoppingList', function() {
     expect(newList.items.length).to.equal(0);
   })
 
-  it('should have method addItem', function(){
+  it('should have method addItem', function () {
     expect(newList).to.have.property('addItem');
     expect(newList.addItem).to.be.a('function');
     newList.addItem(testItem);
@@ -91,7 +88,7 @@ describe('ShoppingList', function() {
     expect(() => newList.addItem()).to.throw('Invalid');
   })
 
-  it('should have method removeItem', function(){
+  it('should have method removeItem', function () {
     expect(newList).to.have.property('removeItem');
     expect(newList.removeItem).to.be.a('function');
     newList.removeItem(testItem);
@@ -99,7 +96,7 @@ describe('ShoppingList', function() {
     expect(() => newList.removeItem()).to.throw('Invalid');
   })
 
-  it('should have method render', function() {
+  it('should have method render', function () {
     newList.addItem(testItem);
     newList.addItem(testItem);
     expect(newList).to.have.property('render');
