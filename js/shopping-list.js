@@ -4,7 +4,7 @@ class ShoppingList{
   }
 
   addItem (item) {
-    if (!(item instanceof ShoppingListItem)){
+    if (!(item instanceof ShoppingListItem) || item.name.length < 1){
       throw 'Invalid'
     } else {
       this.items.push(item);
@@ -19,7 +19,7 @@ class ShoppingList{
       this.items.splice(indexOfItem, 1);
     }
   }
-  render(){
+  render(i){
     let wholeList = '';
     for (let i = 0; i < this.items.length; i++){
       wholeList += this.items[i].render(i);

@@ -7,8 +7,8 @@ class ShoppingListItem {
 
   check() {
     this.is_done = true;
+    this.style.textDecoration = 'line-through';
   }
-  
 
   uncheck() {
     this.is_done = false;
