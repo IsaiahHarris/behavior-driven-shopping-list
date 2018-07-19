@@ -16,11 +16,13 @@ describe('ShoppingListItem', function () {
   it('should have property "name"', function () {
     expect(newItem).to.have.property('name');
     expect(newItem.name).to.be.a('string');
+    expect(newItem.name.length).to.be(newItem.name.length >= 1);
   })
 
   it('should have property "description"', function () {
     expect(newItem).to.have.property('description');
     expect(newItem.description).to.be.a('string');
+    expect(newItem.description.length).to.be(newItem.description.length >= 1);
   })
 
   it('should have property "is_done"', function () {
