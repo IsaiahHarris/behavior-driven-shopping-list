@@ -5,9 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="form">
+  <div class = 'header-container'>
+
+    <div class = 'header'>xXx_LISTED_xXx</div>
+
+    </div>
+    <div class = 'list-choices-container'>
+        <div class="shopping-list">Shopping</div>
+        <div class="to-do-list">To Do</div>
+        <div class="misc">Misc</div>
+  </div>
+  <div id="form" class = 'form-container'>
     <input type="text" id="name" placeholder="Item Name">
     <input type="text" id="description" placeholder="Item Description">
     <button id="add" onclick = "add_to_shopping_list()">Add To List</button>
